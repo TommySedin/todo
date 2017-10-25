@@ -11,9 +11,9 @@
                           non-transactional-connections="false" pool-resize-quantity="2" res-type="javax.sql.XADataSource" 
                           statement-timeout-in-seconds="-1" steady-pool-size="8" validate-atmost-once-period-in-seconds="0" 
                           validation-table-name="DUAL" wrap-jdbc-objects="false">
-        <property name="url" value="jdbc:postgresql://localhost:5432/edukonditori"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/edu"/>
         <property name="user" value="edu"/>
         <property name="password" value="edu"/>
     </jdbc-connection-pool>
-    <jdbc-resource jndi-name="java:app/env/jdbc/edukonditori" pool-name="pgPool" enabled="true" />
+    <jdbc-resource jndi-name="java:app/env/jdbc/edu" pool-name="pgPool" enabled="true" />
 </resources>
