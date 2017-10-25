@@ -9,15 +9,15 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 @Stateless
-public class TodoFacade {
+public class TagFacade {
 	@PersistenceContext(unitName="todo")
 	private EntityManager em;
 
-	public List<Todo> findAll() {
+	public List<Tag> findAll() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 
-		CriteriaQuery<Todo> cq = cb.createQuery(Todo.class);
-		cq.select(cq.from(Todo.class));
+		CriteriaQuery<Tag> cq = cb.createQuery(Tag.class);
+		cq.select(cq.from(Tag.class));
 		return em.createQuery(cq).getResultList();
 	}
 }

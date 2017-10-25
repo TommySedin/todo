@@ -4,19 +4,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 	<h:head></h:head>
 	<h:body>
-		<h:dataTable value="#{todoBean.todos}" var="t">
-			<h:column>
+		<p:dataTable value="#{todoBean.todos}" var="t">
+			<p:column>
 				<f:facet name="header">Done</f:facet>
 				<h:outputText value="#{t.done}"/>
-			</h:column>
-			<h:column>
+			</p:column>
+			<p:column>
 				<f:facet name="header">Description</f:facet>
 				<h:outputText value="#{t.description}"/>
-			</h:column>
-		</h:dataTable>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Tags</f:facet>
+				<p:dataList value="#{t.tags}" var="tag">
+					<h:outputText value="#{tag.name}" />
+				</p:dataList>
+			</p:column>
+		</p:dataTable>
 	</h:body>
 </html>
